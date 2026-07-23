@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shruti Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div id="progress-bar"></div>
+
+    <header>
+    <nav>
+
+        <h2>Shruti.</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+
+    </nav>
+</header>
+<section id="home" class="hero">
+
+    <div class="shape shape1"></div>
+    <div class="shape shape2"></div>
+    
+    <div class="hero-text">
+
+        <h1>Hi, I'm <span>Shruti Pangale</span></h1>
+
+        <h3><span id="typing"></span></h3>
+
+        <p>
+            B.Tech in Artificial Intelligence & Data Science.
+            Passionate about Software Testing, Frontend Development
+            and learning new technologies.
+        </p>
+
+        <div class="button-group">
+
+    <a href="Shruti_Pangale_Resume.pdf" download>
+        <button>Download Resume</button>
+    </a>
+
+    <a href="#contact">
+        <button>Contact Me</button>
+    </a>
+
+        </div>
+    <div class="social-icons">
+
+    <a href="https://www.linkedin.com/in/shruti-pangale-a98ba9282" target="_blank">
+        <i class="fab fa-linkedin"></i>
+    </a>
+
+    <a href="mailto:shrutipangale@gmail.com">
+        <i class="fas fa-envelope"></i>
+    </a>
+
+    </div>
+
+    </div>
+
+    <div class="hero-image">
+    <img src="images/profile.jpg" alt="Shruti Pangale">
+    </div>
+
+</section>
+
+<section id="about" class="about hidden">
+
+    <h2>About Me</h2>
+
+    <p>
+        Hello! I'm <strong>Shruti Pangale</strong>, a B.Tech graduate in
+        Artificial Intelligence & Data Science.
+    </p>
+
+    <p>
+        I am passionate about Software Testing, Frontend Development,
+        and Machine Learning.
+    </p>
+
+    <p>
+        I am looking for a Software Testing or Frontend Developer role
+        where I can learn and grow professionally.
+    </p>
+
+</section>
+<section id="skills" class="skills hidden">
+
+    <h2>My Skills</h2>
+
+    <div class="skill-box">
+
+        <div class="card">HTML</div>
+
+        <div class="card">CSS</div>
+
+        <div class="card">JavaScript</div>
+
+        <div class="card">React</div>
+
+        <div class="card">Java</div>
+
+        <div class="card">Python</div>
+
+        <div class="card">SQL</div>
+
+        <div class="card">Software Testing</div>
+
+        <div class="card">Git & GitHub</div>
+
+        <div class="card">Machine Learning</div>
+
+    </div>
+
+</section>
+<section id="projects" class="projects hidden">
+
+    <h2>My Projects</h2>
+
+    <div class="project-box">
+
+        <div class="project-card">
+            <h3>Heart Disease Prediction</h3>
+            <p>
+                Machine Learning project developed using Python,
+                Scikit-Learn and Streamlit.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Credit Risk Prediction</h3>
+            <p>
+                Machine Learning project that predicts whether a loan applicant is likely to be a credit risk using Python, Scikit-Learn, and classification algorithms.
+            </p>
+        </div>
+
+        <div class="project-card">
+            <h3>Virtual Assistant</h3>
+            <p>
+                AI-based Virtual Assistant developed using Python that performs tasks such as answering queries, opening applications, and executing voice commands.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+<section class="education hidden">
+
+    <h2>Education</h2>
+
+    <div class="edu-card">
+
+        <h3>B.Tech - Artificial Intelligence & Data Science</h3>
+
+        <p> Loknete Shamrao Peje Government College of Engineering,Ratnagiri</p>
+
+        <p>2022 - 2026</p>
+
+    </div>
+
+</section>
+<section id="contact" class="contact hidden">
+
+    <h2>Contact Me</h2>
+
+    <div class="contact-box">
+
+        <p>📧 Email</p>
+        <p>shrutipangale@gmail.com</p>
+
+        <p>📱 Phone</p>
+        <p>+91 9011968573</p>
+
+        <p>📍 Location</p>
+        <p>Chiplun, Maharashtra</p>
+
+        <p>💼 LinkedIn</p>
+        <a href="https://www.linkedin.com/in/shruti-pangale-a98ba9282" target="_blank">
+            View My LinkedIn
+        </a>
+
+    </div>
+
+</section>
+<footer>
+
+    <p>© 2026 Shruti Pangale | All Rights Reserved.</p>
+
+</footer>
+<script>
+const roles = [
+    "Aspiring Software Tester",
+    "Frontend Developer",
+    "AI & Data Science Graduate"
+];
+
+let roleIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+function typeEffect() {
+    const typing = document.getElementById("typing");
+
+    if (!typing) return;
+
+    const current = roles[roleIndex];
+
+    if (!deleting) {
+        typing.textContent = current.substring(0, charIndex++);
+        if (charIndex > current.length) {
+            deleting = true;
+            setTimeout(typeEffect, 1500);
+            return;
+        }
+    } else {
+        typing.textContent = current.substring(0, charIndex--);
+        if (charIndex < 0) {
+            deleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+        }
+    }
+
+    setTimeout(typeEffect, deleting ? 50 : 100);
+}
+
+typeEffect();
+</script>
+<script>
+const hiddenElements = document.querySelectorAll(".hidden");
+
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+hiddenElements.forEach((el)=>observer.observe(el));
+</script>
+
+<div class="cursor-glow"></div>
+
+<script>
+const glow = document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+    glow.style.left = e.clientX + "px";
+    glow.style.top = e.clientY + "px";
+});
+</script>
+<script>
+window.addEventListener("scroll", () => {
+
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progress-bar").style.width =
+        progress + "%";
+});
+</script>
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll("nav ul li a");
+
+window.addEventListener("scroll", () => {
+
+    let current = "";
+
+    sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 120;
+
+        if (window.scrollY >= sectionTop) {
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach((link) => {
+        link.classList.remove("active");
+
+        if (link.getAttribute("href") === "#" + current) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
+</body>
+
+</html>
